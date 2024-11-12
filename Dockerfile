@@ -9,11 +9,11 @@ FROM node:18-slim
 
 WORKDIR /app
 
-COPY --from=build /app/.svelte-kit /app/.svelte-kit
+COPY --from=build /app/build /app/build
 
 COPY package.json ./
 RUN npm install --omit=dev
 
 EXPOSE 5173
 
-CMD ["node", ".svelte-kit/output/server/index.js"]
+CMD ["node", "build"]
