@@ -9,7 +9,7 @@ FROM node:18-slim
 
 WORKDIR /app
 
-COPY --from=build /app/build /app/build
+COPY --from=build /app/.svelte-kit /app/.svelte-kit
 
 COPY package.json ./
 RUN npm install --omit=dev
